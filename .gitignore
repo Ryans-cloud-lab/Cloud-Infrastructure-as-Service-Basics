@@ -1,0 +1,10 @@
+build/
+.gradle/
+*.jar
+.DS_Store
+.idea/
+.vscode/
+*.prem
+*.key
+id_*
+.env
