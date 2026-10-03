@@ -1,10 +1,5 @@
-build/
-.gradle/
-*.jar
 .DS_Store
-.idea/
-.vscode/
-*.prem
+*.pem
 *.key
 id_*
 .env
