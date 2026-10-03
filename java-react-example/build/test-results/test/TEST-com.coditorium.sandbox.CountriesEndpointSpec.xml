@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.coditorium.sandbox.CountriesEndpointSpec" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-03T01:20:05.206Z" hostname="Ryans-MacBook-Pro.local" time="1.136">
+  <properties/>
+  <testcase name="should list countries" classname="com.coditorium.sandbox.CountriesEndpointSpec" time="1.133"/>
+  <system-out><![CDATA[02:20:05.227 [Test worker] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-10-03T02:20:05.364+01:00  INFO 3480 --- [    Test worker] c.c.sandbox.CountriesEndpointSpec        : Starting CountriesEndpointSpec using Java 25.0.4.1 with PID 3480 (started by ryankunaka in /Users/ryankunaka/java-react-example)
+2026-10-03T02:20:05.364+01:00  INFO 3480 --- [    Test worker] c.c.sandbox.CountriesEndpointSpec        : No active profile set, falling back to 1 default profile: "default"
+2026-10-03T02:20:05.682+01:00  INFO 3480 --- [    Test worker] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-03T02:20:05.690+01:00  INFO 3480 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-03T02:20:05.690+01:00  INFO 3480 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-03T02:20:05.715+01:00  INFO 3480 --- [    Test worker] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 334 ms
+2026-10-03T02:20:05.763+01:00  INFO 3480 --- [    Test worker] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page: class path resource [static/index.html]
+2026-10-03T02:20:05.861+01:00  INFO 3480 --- [    Test worker] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 49522 (http) with context path '/'
+2026-10-03T02:20:05.864+01:00  INFO 3480 --- [    Test worker] c.c.sandbox.CountriesEndpointSpec        : Started CountriesEndpointSpec in 0.642 seconds (process running for 1.311)
+2026-10-03T02:20:06.230+01:00  INFO 3480 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2026-10-03T02:20:06.230+01:00  INFO 3480 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-03T02:20:06.231+01:00  INFO 3480 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-03T02:20:06.268+01:00  INFO 3480 --- [    Test worker] c.c.sandbox.country.CountriesEndpoint    : GET /countries
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/countries
+       Parameters = {}
+          Headers = []
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.coditorium.sandbox.country.CountriesEndpoint
+           Method = com.coditorium.sandbox.country.CountriesEndpoint#getCountries()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"countries":["Albania","Andorra","Armenia","Austria","Azerbaijan","Belarus","Belgium","Bosnia and Herzegovina","Bulgaria","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Georgia","Germany","Greece","Hungary","Iceland","Ireland","Italy","Kazakhstan","Kosovo","Latvia","Liechtenstein","Lithuania","Luxembourg","Macedonia","Malta","Moldova","Monaco","Montenegro","Netherlands","Norway","Poland","Portugal","Romania","Russia","San Marino","Serbia","Slovakia","Slovenia","Spain","Sweden","Switzerland","Turkey","Ukraine","United Kingdom","Vatican"]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/ryankunaka/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.18.10/9426d28828bdcdf42666bb7a68c468279ea78f59/byte-buddy-agent-1.18.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
