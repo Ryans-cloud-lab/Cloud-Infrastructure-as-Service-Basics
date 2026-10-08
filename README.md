@@ -12,14 +12,12 @@
 ##
 ## Description
 
-In real environments, applications and tools such as **Nexus (artifact repository)** and **Jenkins (build automation)** run on remote servers in the cloud, not on a developer's laptop. This project replicates that: I provisioned a cloud server, secured access to it, and deployed and ran an application on it.
+In real environments, applications and tools such as **Nexus (artifact repository)** and **Jenkins (build automation)** run on remote servers in the cloud rather than on a developer's laptop. This project replicates that: I provisioned a cloud server while securing access to it and deployed a running application on it.
 
 
 **<ins>Infrastructure as a service (IaaS):</ins>** provides on-demand compute, storage and networking resources, so you rent virtual servers instead of buying physical hardware. The cloud provider manages the physical infrastructure, while the user manages the operating system, security and applications.
 
-In this project, I used **DigitalOcean's** IaaS offering to provision an Ubuntu Droplet (virtual server), then took responsibility for configuring the OS, creating a non-root user and deploying the application myself.
-
-In this project, I used DigitalOcean's IaaS offering to provision an Ubuntu Droplet (virtual server), then took responsibility for configuring the OS, creating a non-root user and deploying the application myself.
+In this project I used **DigitalOcean's** IaaS offering to provision an Ubuntu Droplet (virtual server), then took responsibility for configuring the OS, creating a non-root user and deploying the application myself.
 
 On DigitalOcean, Linux virtual machines are called **Droplets**
 
@@ -44,48 +42,48 @@ Created an account and signed in to the DigitalOcean control panel.
 
 ### 2. Configure SSH keys
 
-**SSH keys** let you log in to any Droplet from your machine **without a password**, using private to public-key authentication.
+**SSH keys** lets me  log in to any Droplet from my machine **without a password**, using private to public-key authentication.
 
-**On your Command Line Interface:**
+**Command Line Interface:**
 
-1. Check for an existing key (use either `~/.ssh/id_ed25519.pub` or `~/.ssh/id_rsa.pub`).
-2. If you need to create a new key pair:
+1. Checked for an existing key (use either `~/.ssh/id_ed25519.pub` or `~/.ssh/id_rsa.pub`).
+2. If there was a case where i needed to create a new key pair:
 
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com" -f ~/.ssh/id_ed25519
 ```
 
-3. Copy the **public** key (`~/.ssh/id_rsa.pub` file). Then in the DigitalOcean web UI, add it under **Settings → Security → SSH keys** (or add it when you create the Droplet).
+3. Copied the **public** key (`~/.ssh/id_rsa.pub` file). Then in the DigitalOcean web UI, added it under **Settings → Security → SSH keys** (or  when you create the Droplet).
 
 Added the public key to DigitalOcean (Settings → Security → SSH keys). The private key stays only on my machine and is never committed to Git.
 
-### 3. Create a Droplet (Linux Ubuntu)
+### 3. Created a Droplet (Linux Ubuntu)
 
 Created an Ubuntu [24.04 LTS] <ins>**Droplet**</ins> (1 vCPU / 512 MB / 10 GB, London) with SSH key authentication selected instead of a password.
 
 **Droplet:** a Linux-based virtual machine running on DigitalOcean's infrastructure.
 
 
-### 4. Open SSH (port 22) with a firewall
+### 4. Opened SSH (port 22) with a firewall
 
 I allowed **inbound** TCP traffic on **port 22** so my local machine can open a SSH session.
 
 Created or attached a **Cloud Firewall** on DigitalOcean so that:
 
-- **Inbound rules** describe traffic **into** the Droplet (here: SSH from your IP or a controlled range—tightening the source improves security).
+- **Inbound rules** describe traffic **into** the Droplet (here: SSH from my IP or a controlled range—tightening the source improves security).
 - **Outbound rules** describe traffic **from** the Droplet out to the internet (defaults are often permissive for learning).
 
-Exact clicks vary slightly over time; use DigitalOcean’s docs for **Cloud Firewalls** and attach the firewall to your Droplet.
+Exact clicks vary slightly over time; I used DigitalOcean’s docs for **Cloud Firewalls** and attached the firewall to my Droplet.
 
 ### 5. SSH into the server using its public IP
 
 Connected using the Droplet's public IPv4 address (initially as root):
 
 ```bash
-ssh root@YOUR_DROPLET_PUBLIC_IP
+ssh root@My_DROPLET_PUBLIC_IP
 ```
 
-### 6. Install Java on the Droplet
+### 6. Installed Java on the Droplet
 
 Installed the OpenJDK 17 runtime (headless, since the server has no GUI) and verified the version:
 
@@ -97,7 +95,7 @@ sudo apt install -y openjdk-17-jre-headless
 java -version
 ```
 
-Commands may differ on other distributions; adjust to match your Droplet’s OS.
+Commands may differ on other distributions so I adjusted to match my Droplet’s OS.
 
 ---
 
